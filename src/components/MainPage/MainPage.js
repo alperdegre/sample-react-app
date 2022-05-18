@@ -2,6 +2,7 @@ import React from 'react';
 import FeaturedProducts from './FeaturedProducts';
 import HeaderImage from './HeaderImage';
 import ProductMessage from './ProductMessage';
+import Socials from './Socials';
 
 function MainPage() {
   return (
@@ -9,6 +10,7 @@ function MainPage() {
       <HeaderImage />
       <ProductMessage />
       <FeaturedProducts />
+      <Socials />
     </main>
   );
 }

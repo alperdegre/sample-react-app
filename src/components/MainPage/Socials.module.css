@@ -1,0 +1,21 @@
+.socials {
+    background-color: #DFDBCE;
+}
+
+.socials a {
+    border: none;
+    background-color: transparent;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.socials a > * {
+    color: #130912;
+    transition: color 0.5s;
+    width: 49px;
+    height: 46px;
+}
+
+.socials a:hover > * {
+    color: #703A6B;
+}
