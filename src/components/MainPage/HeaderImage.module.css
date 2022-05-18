@@ -30,7 +30,7 @@
 .header-text button {
   margin-top: 2rem;
   padding: 1rem 2rem;
-  color: white;
+  color: #ccc;
   background-color: transparent;
   border: none;
   text-transform: uppercase;
@@ -41,5 +41,5 @@
 }
 
 .header-text button:hover {
-  color: #ccc;
+  color: white;
 }
