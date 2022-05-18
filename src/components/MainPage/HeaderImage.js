@@ -15,7 +15,6 @@ function HeaderImage() {
           </p>
           <button type="button">Shop Now</button>
         </div>
-        <p>Test</p>
       </div>
     </div>
   );
