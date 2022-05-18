@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# sample-react-app
 
 A sample react frontend project to put together everything i've learned so far.
 
