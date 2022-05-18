@@ -40,3 +40,18 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Extra Packages
+
+### react-router
+React router version 6 for page routing.
+
+### eslint with airbnb config
+Eslint set up with airbnb config.
+
+### prettier
+An opinionated code formatter.
+
+### eslint-config-prettier
+Turns off all rules that are unnecessary of might conflict with Prettier.
+
+### eslint-plugin-prettier
+Runs Prettier as an ESLint rule and repors differences as individual ESLint issues.

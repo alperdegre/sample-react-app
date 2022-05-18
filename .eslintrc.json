@@ -4,6 +4,7 @@
     "plugin:prettier/recommended",
     "prettier/react"
   ],
+  "plugins": ["prettier"],
   "env": {
     "browser": true,
     "commonjs": true,
@@ -13,6 +14,7 @@
   },
   "rules": {
     "jsx-a11y/href-no-hash": ["off"],
+    "prettier/prettier": ["error"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "max-len": [
       "warn",
