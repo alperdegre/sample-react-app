@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  z-index: 5;
+  top: 0;
+  transition: padding-top 0.5s;
+  background-color: transparent;
+  color: #ddd;
+  padding-top: 5rem;
+  position: absolute;
+}
+
+.logo {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.logo svg {
+  width: 60px;
+  height: 40px;
+}
+
+.logo h1 {
+  font-size: 3rem;
+  padding-left: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+}
+
+.logo:hover {
+  color: #fff;
+}
