@@ -1,0 +1,43 @@
+.footer {
+  margin-top: 2rem;
+  background-color: #130912;
+  padding: 3rem;
+  color: #f5f3e9;
+  width: 100%;
+  display: flex;
+}
+
+.footer-content {
+  justify-content: space-between;
+}
+
+.footer-content i {
+  font-size: 5rem;
+}
+
+.footer h2 {
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  border: none;
+  background-color: transparent;
+  display: inline-block;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+  color: #f5f3e9;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+.footer p {
+  font-size: 12px;
+}
+
+.footer svg {
+  width: 100px;
+  height: 80px;
+}
