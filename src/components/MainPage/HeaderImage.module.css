@@ -2,6 +2,9 @@
   width: 100%;
   height: 37.5rem;
   background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
   background-image: linear-gradient(
       0deg,
       #0e070d 0%,
@@ -9,4 +12,33 @@
       rgba(0, 0, 0, 0.6811099439775911) 100%
     ),
     url('../../assets/images/headerbgsmall.jpg');
+}
+
+.header-text {
+  text-align: center;
+  height: 37.5rem;
+  padding: 13rem 5rem;
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: white;
+}
+
+.header-text button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+.header-text button:hover {
+  color: #ccc;
 }
