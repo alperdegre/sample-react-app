@@ -1,13 +1,15 @@
 import React from 'react';
+import FeaturedProducts from './FeaturedProducts';
 import HeaderImage from './HeaderImage';
 import ProductMessage from './ProductMessage';
 
 function MainPage() {
   return (
-    <div>
+    <main>
       <HeaderImage />
       <ProductMessage />
-    </div>
+      <FeaturedProducts />
+    </main>
   );
 }
 

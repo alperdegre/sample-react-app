@@ -11,11 +11,11 @@ function Header() {
           <Logo />
           <h1>COFFEE SHOP</h1>
         </button>
-        <nav className={classes.nav}>
+        <div className={classes.nav}>
           <HeaderButton text="Home" />
           <HeaderButton text="About" />
           <HeaderButton text="Products" />
-        </nav>
+        </div>
       </div>
     </header>
   );

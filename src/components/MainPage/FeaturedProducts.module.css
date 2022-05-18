@@ -1,0 +1,56 @@
+.featured-products {
+  padding-top: 3rem;
+  text-align: center;
+  background-color: #e1dfd9;
+}
+
+.featured-products h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.featured-products button {
+  margin: 0 0 2.5rem 0;
+  color: #0e070d;
+}
+
+.featured-products button:hover {
+  color: #3f273b;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0rem;
+}
+
+.buy-now-button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .product-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0rem;
+  }
+}
