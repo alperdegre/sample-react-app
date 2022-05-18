@@ -12,9 +12,9 @@ function Header() {
           <h1>COFFEE SHOP</h1>
         </button>
         <div className={classes.nav}>
-          <HeaderButton text="Home" />
-          <HeaderButton text="About" />
-          <HeaderButton text="Products" />
+          <HeaderButton text="Home" to="/" />
+          <HeaderButton text="About" to="/" />
+          <HeaderButton text="Products" to="/products" />
         </div>
       </div>
     </header>

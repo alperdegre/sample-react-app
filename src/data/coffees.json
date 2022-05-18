@@ -1,0 +1,38 @@
+{
+  "coffees": [
+  {
+    "id": "1",
+    "name": "Excelsa",
+    "description": "Colombian coffee beans from Caldas region",
+    "price": 20.99
+  },
+  {
+    "id": "2",
+    "name": "Ethiopia",
+    "description": "Best coffee beans from Africa region",
+    "price": 18.99
+  },
+  {
+    "id": "3",
+    "name": "Robusta",
+    "description": "Made from Robusta plants with a hint of chocolate",
+    "price": 21.99
+  },
+  {
+    "id": "4",
+    "name": "Liberica",
+    "description": "Beans with a smoky texture with hints of floral aroma",
+    "price": 23.99
+  },
+  { "id": "5",
+    "name": "Indonesia",
+    "description": "Arabica beans coming directly from Indonesia",
+    "price": 25.99
+  },
+  {
+    "id": "6",
+    "name": "India",
+    "description": "Indian beans with a soft taste and high levels of acidity",
+    "price": 16.99
+  }]
+}
