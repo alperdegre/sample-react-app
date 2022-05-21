@@ -20,6 +20,7 @@
   border: none;
   background-color: #faf9f8;
   color: #63425d;
+  cursor: pointer;
 }
 
 .selector-button:hover {
