@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import classes from './ProductsPage.module.css';
 import coffeeJSON from '../../data/coffees.json';
+import ProductItem from './ProductItem';
 
 function ProductsPage() {
   const coffeeData = useMemo(() => JSON.parse(JSON.stringify(coffeeJSON)), []);
@@ -13,25 +14,14 @@ function ProductsPage() {
       </p>
       <div className={`container ${classes['products-container']}`}>
         <h3>LIGHT ROAST COFFEES</h3>
-
         {coffeeData.coffees.map((coffee) => {
-          if (coffee.id === '1') {
-            return (
-              <div key={coffee.id} className={classes['coffee-extended']}>
-                {coffee.name}
-                <p className={classes.description}>
-                  Light roasted arabica beans Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Molestias, debitis. Lorem ipsum
-                  dolor sit amet.
-                </p>
-              </div>
-            );
-          }
           return (
-            <div key={coffee.id} className={classes.coffee}>
-              {coffee.name}
-              <p className={classes.description}>{coffee.description}</p>
-            </div>
+            <ProductItem
+              key={coffee.id}
+              name={coffee.name}
+              description={coffee.description}
+              price={coffee.price.toString()}
+            />
           );
         })}
         <h3>MEDIUM ROAST COFFEES</h3>
