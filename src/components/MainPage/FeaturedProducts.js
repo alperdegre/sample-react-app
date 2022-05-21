@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './FeaturedProducts.module.css';
 import FeaturedItem from './FeaturedItem';
 
@@ -12,9 +13,9 @@ function FeaturedProducts() {
         <FeaturedItem />
         <FeaturedItem />
       </div>
-      <button type="button" className={classes['buy-now-button']}>
+      <Link to="/products" className={classes['buy-now-button']}>
         Buy Now
-      </button>
+      </Link>
     </div>
   );
 }

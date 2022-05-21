@@ -13,15 +13,6 @@
   font-size: 1.3rem;
 }
 
-.featured-products button {
-  margin: 0rem 0 2.5rem 0;
-  color: #0e070d;
-}
-
-.featured-products button:hover {
-  color: #3f273b;
-}
-
 .product-container {
   display: flex;
   flex-wrap: wrap;
@@ -30,6 +21,7 @@
 }
 
 .buy-now-button {
+  display: inline-block;
   background-color: transparent;
   border: none;
   text-transform: uppercase;
@@ -37,8 +29,13 @@
   font-size: 1.8rem;
   letter-spacing: 0.2rem;
   cursor: pointer;
+  margin: 0rem 0 2.5rem 0;
+  color: #0e070d;
 }
 
+.buy-now-button:hover {
+  color: #50334b;
+}
 
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -60,7 +57,7 @@
     gap: 0rem;
   }
 
-  .featured-products button {
+  .buy-now-button {
     margin: 1.5rem 0 2.5rem 0;
   }
 }
@@ -74,7 +71,7 @@
     gap: 0rem;
   }
 
-  .featured-products button {
+  .buy-now-button {
     margin: 1.5rem 0 2.5rem 0;
   }
 }

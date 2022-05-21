@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './HeaderImage.module.css';
 
 function HeaderImage() {
@@ -13,7 +14,7 @@ function HeaderImage() {
             adipisicing elit. Quidem et ullam aut nisi nam totam quod temporibus
             cum, cumque natus?
           </p>
-          <button type="button">Shop Now</button>
+          <Link to="/products">Shop Now</Link>
         </div>
       </div>
     </div>
