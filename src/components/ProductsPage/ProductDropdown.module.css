@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .dropdown-button {

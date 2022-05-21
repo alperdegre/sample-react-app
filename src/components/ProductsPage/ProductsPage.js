@@ -15,17 +15,46 @@ function ProductsPage() {
       <div className={`container ${classes['products-container']}`}>
         <h3>LIGHT ROAST COFFEES</h3>
         {coffeeData.coffees.map((coffee) => {
-          return (
-            <ProductItem
-              key={coffee.id}
-              name={coffee.name}
-              description={coffee.description}
-              price={coffee.price.toString()}
-            />
-          );
+          if (coffee.roast === 'light') {
+            return (
+              <ProductItem
+                key={coffee.id}
+                name={coffee.name}
+                description={coffee.description}
+                price={coffee.price.toString()}
+              />
+            );
+          }
+          return null;
         })}
         <h3>MEDIUM ROAST COFFEES</h3>
+        {coffeeData.coffees.map((coffee) => {
+          if (coffee.roast === 'medium') {
+            return (
+              <ProductItem
+                key={coffee.id}
+                name={coffee.name}
+                description={coffee.description}
+                price={coffee.price.toString()}
+              />
+            );
+          }
+          return null;
+        })}
         <h3>DARK ROAST COFFEES</h3>
+        {coffeeData.coffees.map((coffee) => {
+          if (coffee.roast === 'dark') {
+            return (
+              <ProductItem
+                key={coffee.id}
+                name={coffee.name}
+                description={coffee.description}
+                price={coffee.price.toString()}
+              />
+            );
+          }
+          return null;
+        })}
       </div>
     </div>
   );

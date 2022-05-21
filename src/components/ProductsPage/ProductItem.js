@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classes from './ProductItem.module.css';
 import ProductDropdown from './ProductDropdown';
+import ProductAmountSelector from './ProductAmountSelector';
 
 function ProductItem({ name, description, price }) {
   const [isSelected, setIsSelected] = useState(false);
@@ -10,6 +11,8 @@ function ProductItem({ name, description, price }) {
     title: 'Select a Type',
     value: 'no',
   });
+  const [selectedAmount, setSelectedAmount] = useState(0);
+
   const dropdownItems = [
     { id: 1, title: 'Extra Coarse (Cold Brew)', value: 'extra-coarse' },
     { id: 2, title: 'Coarse (French Press)', value: 'coarse' },
@@ -36,6 +39,11 @@ function ProductItem({ name, description, price }) {
     setSelectedType(item);
   };
 
+  const productAmountChangeHandler = (amount) => {
+    console.log(amount);
+    setSelectedAmount(amount);
+  };
+
   return (
     <div
       className={
@@ -48,7 +56,7 @@ function ProductItem({ name, description, price }) {
     >
       <div className={classes['product-half']}>
         <h4>{name}</h4>
-        <p>{description}</p>
+        <p className={classes['product-description']}>{description}</p>
         {isSelected && (
           <>
             <h5 className={classes['type-title']}>Grind Type</h5>
@@ -58,7 +66,9 @@ function ProductItem({ name, description, price }) {
               onSelected={dropdownSelectedHandler}
             />
             <h5 className={classes['amount-title']}>Amount</h5>
-            <p>+ 5 -</p>
+            <ProductAmountSelector
+              onAmountChange={productAmountChangeHandler}
+            />
             <button
               className={classes['product-close']}
               type="button"
@@ -71,11 +81,13 @@ function ProductItem({ name, description, price }) {
       </div>
       <div className={classes['product-half']}>
         <h5 className={classes['product-sub-title']}>Price</h5>
-        <h4 className={classes['product-price']}>{price}</h4>
+        <h4 className={classes['product-price']}>{price} $</h4>
         {isSelected && (
           <>
-            <h5 className={classes['product-sub-title']}>Total Price</h5>
-            <h4 className={classes['product-price']}>50</h4>
+            <h5 className={classes['product-total-title']}>Total Price</h5>
+            <h4 className={classes['product-price']}>
+              {(selectedAmount * price).toFixed(2)} $
+            </h4>
             <button className={classes['add-to-cart']} type="button">
               Add to Cart
             </button>

@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 main {
   width: 100%;
 }
@@ -18,11 +30,10 @@ main {
   justify-content: space-between;
 }
 
-
 @media only screen and (max-width: 1399px) and (min-width: 1200px) {
   html {
     font-size: 16px;
-  }  
+  }
   .container {
     width: 80rem;
   }

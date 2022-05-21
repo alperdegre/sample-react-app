@@ -4,7 +4,6 @@
   justify-content: space-between;
   padding: 1rem 2rem 1rem 2rem;
   user-select: none;
-  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -23,6 +22,7 @@
 
 .product-price {
   text-align: right;
+  text-transform: uppercase;
   margin-bottom: 0.4rem;
 }
 
@@ -34,9 +34,10 @@
 .product-item h4 {
   font-weight: 700;
   font-size: 2.4rem;
+  text-transform: uppercase;
 }
 
-.product-item p {
+.product-description {
   font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
@@ -44,16 +45,26 @@
 }
 
 .product-item h5 {
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
 
 .product-sub-title {
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
   text-align: end;
+}
+
+.product-total-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-align: end;
+  margin-top: 2.5rem;
 }
 
 .type-title {
@@ -91,11 +102,11 @@
   padding: 1rem 2rem 1rem 2rem;
   user-select: none;
   position: relative;
-  text-transform: uppercase;
   background-color: #e4e2dc;
 }
 
 .product-item-extend h4 {
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 2.4rem;
 }
@@ -108,6 +119,7 @@
 }
 
 .product-item-extend h5 {
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
@@ -116,7 +128,7 @@
 .product-close {
   font-weight: 700;
   font-size: 1.8rem;
-  padding-top: 5px;
+  padding-top: 25px;
   cursor: pointer;
   border: none;
   background-color: transparent;
@@ -139,10 +151,10 @@
     padding-left: 1.6rem;
     padding-bottom: 0.5rem;
   }
-  
+
   .product-div p {
     font-size: 1.3rem;
-    padding:0 1rem;
+    padding: 0 1rem;
   }
 }
 
@@ -158,9 +170,9 @@
     padding-left: 1.6rem;
     padding-bottom: 0.5rem;
   }
-  
+
   .product-div p {
     font-size: 1.3rem;
-    padding:0 1rem;
+    padding: 0 1rem;
   }
 }

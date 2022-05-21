@@ -1,38 +1,102 @@
 {
   "coffees": [
-  {
-    "id": "1",
-    "name": "Excelsa",
-    "description": "Colombian coffee beans from Caldas region",
-    "price": 20.99
-  },
-  {
-    "id": "2",
-    "name": "Ethiopia",
-    "description": "Best coffee beans from Africa region",
-    "price": 18.99
-  },
-  {
-    "id": "3",
-    "name": "Robusta",
-    "description": "Made from Robusta plants with a hint of chocolate",
-    "price": 21.99
-  },
-  {
-    "id": "4",
-    "name": "Liberica",
-    "description": "Beans with a smoky texture with hints of floral aroma",
-    "price": 23.99
-  },
-  { "id": "5",
-    "name": "Indonesia",
-    "description": "Arabica beans coming directly from Indonesia",
-    "price": 25.99
-  },
-  {
-    "id": "6",
-    "name": "India",
-    "description": "Indian beans with a soft taste and high levels of acidity",
-    "price": 16.99
-  }]
+    {
+      "id": "1",
+      "name": "Nicaragua",
+      "description": "Light Roast is a healthy and high-quality bean. It’s an organic and single origin coffee from the mountains of Nicaragua.",
+      "price": 21.99,
+      "roast": "light"
+    },
+    {
+      "id": "2",
+      "name": "Columbia",
+      "description": "To bring out the best flavors, you’ll want to try this coffee as drip, pour over, or cold brew.",
+      "price": 17.99,
+      "roast": "light"
+    },
+    {
+      "id": "3",
+      "name": "Luminosa",
+      "description": "It’s a blend from Columbia and Ethiopia that highlights the best qualities from each region.",
+      "price": 20.99,
+      "roast": "light"
+    },
+    {
+      "id": "4",
+      "name": "Hawaiian Kona",
+      "description": "This coffee is a blend of two of the best coffee beans in Hawaii. It’s a great way to start your morning.",
+      "price": 18.99,
+      "roast": "light"
+    },
+    {
+      "id": "5",
+      "name": "Sumatra",
+      "description": "The flavor has notes of brown sugar, wine, and dried fruit. The beans are grown in volcanic soil that’s mineral-rich.",
+      "price": 21.99,
+      "roast": "medium"
+    },
+    {
+      "id": "6",
+      "name": "Kenya",
+      "description": "The coffee beans are also roasted in small batches, so you can be sure that you’re getting the freshest ones available.",
+      "price": 16.99,
+      "roast": "medium"
+    },
+    {
+      "id": "7",
+      "name": "Big Bang",
+      "description": "The Big Bang Medium Roast variety is smooth and mellow, with tasting notes of tropical fruit.",
+      "price": 19.99,
+      "roast": "medium"
+    },
+    {
+      "id": "8",
+      "name": "Caribou",
+      "description": "The Caribou Blend often has inconsistent quality. Sometimes the taste is on the bland side, and other times, it tastes bitter and burnt.",
+      "price": 18.99,
+      "roast": "medium"
+    },
+    {
+      "id": "9",
+      "name": "Excelsa",
+      "description": "Colombian coffee beans from Caldas region. The flavor is smooth, full-bodied, and dark without being bitter.",
+      "price": 20.99,
+      "roast": "dark"
+    },
+    {
+      "id": "10",
+      "name": "Ethiopia",
+      "description": "Best coffee beans from Africa region. So, if you’ve got health issues that steer you away from traditional coffees, a decaf dark roast is a good way to go.",
+      "price": 18.99,
+      "roast": "dark"
+    },
+    {
+      "id": "11",
+      "name": "Robusta",
+      "description": "Made from Robusta plants with a hint of chocolate. A fine grind on these whole beans brings out their best, and it makes a great espumita when whipped with sugar.",
+      "price": 21.99,
+      "roast": "dark"
+    },
+    {
+      "id": "12",
+      "name": "Liberica",
+      "description": "Beans with a smoky texture with hints of floral aroma. You’ll like the balance and smooth flavor of these coffee beans.",
+      "price": 23.99,
+      "roast": "dark"
+    },
+    {
+      "id": "13",
+      "name": "Indonesia",
+      "description": "Arabica beans coming directly from Indonesia. This famous Indonesian coffee variety is smooth, full-bodied, and perfectly roasted.",
+      "price": 25.99,
+      "roast": "dark"
+    },
+    {
+      "id": "14",
+      "name": "India",
+      "description": "Indian beans with a soft taste and high levels of acidity. If you’re looking for a stomach-friendly coffee, this is a good choice.",
+      "price": 16.99,
+      "roast": "dark"
+    }
+  ]
 }
