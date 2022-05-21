@@ -40,7 +40,6 @@ function ProductItem({ name, description, price }) {
   };
 
   const productAmountChangeHandler = (amount) => {
-    console.log(amount);
     setSelectedAmount(amount);
   };
 

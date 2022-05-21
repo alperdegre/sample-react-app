@@ -28,7 +28,7 @@ function ProductAmountSelector({ onAmountChange }) {
   };
 
   useEffect(() => {
-    if (selectedAmount > 0) {
+    if (selectedAmount >= 0) {
       onAmountChange(selectedAmount);
     }
   }, [selectedAmount]);
