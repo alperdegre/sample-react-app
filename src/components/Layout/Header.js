@@ -6,16 +6,14 @@ import HeaderButton from './HeaderButton';
 function Header() {
   return (
     <header className={classes.navbar}>
-      <div className="container-flex justify">
-        <button className={classes.logo} type="button">
-          <Logo />
-          <h1>COFFEE SHOP</h1>
-        </button>
-        <div className={classes.nav}>
-          <HeaderButton text="Home" to="/" />
-          <HeaderButton text="About" to="/" />
-          <HeaderButton text="Products" to="/products" />
-        </div>
+      <button className={classes.logo} type="button">
+        <Logo />
+        <h1>COFFEE SHOP</h1>
+      </button>
+      <div>
+        <HeaderButton text="Home" to="/" />
+        <HeaderButton text="About" to="/" />
+        <HeaderButton text="Products" to="/products" />
       </div>
     </header>
   );

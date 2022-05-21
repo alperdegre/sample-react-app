@@ -42,3 +42,32 @@
 .header-text button:hover {
   color: white;
 }
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .header-text {
+    padding: 15rem 5rem 5rem 5rem;
+  }
+
+  .header-text button {
+    margin-top: 1.8rem;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .header-text {
+    padding: 13rem 5rem 5rem 5rem;
+  }
+
+  .header-text button {
+    margin-top: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .header-text {
+    padding: 8rem 5rem 5rem 5rem;
+  }
+
+  .header-text button {
+    margin-top: 1rem;
+  }
+}

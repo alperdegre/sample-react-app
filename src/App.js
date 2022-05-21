@@ -8,14 +8,14 @@ import Footer from './components/Layout/Footer';
 
 function App() {
   return (
-    <div>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/products" element={<ProductsPage />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 

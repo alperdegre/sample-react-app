@@ -25,24 +25,7 @@
   text-align: justify;
 }
 
-@media (min-width: 576px) {
-  .card {
-    width: 60%;
-    margin: 3rem auto;
-  }
-  .card img {
-    width: min-content;
-    height: 40%;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-  }
-  .card h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
+@media only screen and (max-width: 991px) and (min-width: 768px) {
   .card {
     width: 32%;
     margin: 3rem auto;
@@ -50,7 +33,7 @@
   .card img {
     height: auto;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-bottom: 0.5rem;
   }
   .card h2 {
@@ -60,5 +43,39 @@
 
   .card p {
     text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .card {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .card img {
+    width: min-content;
+    height: 20rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .card {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .card img {
+    width: min-content;
+    height: 20rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 }
