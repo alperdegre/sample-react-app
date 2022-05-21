@@ -40,6 +40,10 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 0px 3px inset;
 }
 
+.selector-input:focus {
+  outline: none;
+}
+
 .minus {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;

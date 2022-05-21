@@ -78,19 +78,21 @@ function ProductItem({ name, description, price }) {
           </>
         )}
       </div>
-      <div className={classes['product-half']}>
-        <h5 className={classes['product-sub-title']}>Price</h5>
-        <h4 className={classes['product-price']}>{price} $</h4>
+      <div className={classes['product-price-half']}>
+        <div className={classes['price-container']}>
+          <h5 className={classes['product-sub-title']}>Price</h5>
+          <h4 className={classes['product-price']}>{price} $</h4>
+        </div>
         {isSelected && (
-          <>
+          <div className={classes['price-container']}>
             <h5 className={classes['product-total-title']}>Total Price</h5>
-            <h4 className={classes['product-price']}>
+            <h4 className={classes['product-price-total']}>
               {(selectedAmount * price).toFixed(2)} $
             </h4>
             <button className={classes['add-to-cart']} type="button">
               Add to Cart
             </button>
-          </>
+          </div>
         )}
       </div>
     </div>
