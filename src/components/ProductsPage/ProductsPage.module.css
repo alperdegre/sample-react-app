@@ -1,0 +1,77 @@
+.products-main {
+    background-color: #f1f0ed;
+    padding-top: 10rem;
+}
+
+.products-title {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+}
+
+.products-description {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.products-container {
+    margin-top: 2rem;
+}
+
+.products-container h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: 0.3rem;
+    padding: 0.6rem 0;
+    border-bottom: solid 3px;
+}
+
+.coffee {
+    padding: 1rem 0 1rem 2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.coffee:hover {
+    color: #50334b;
+    background-color: #e4e2dc;
+}
+
+.description {
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+
+.coffee-extended {
+    padding: 1rem 0 1rem 2rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+.coffee:hover {
+    color: #50334b;
+    background-color: #e4e2dc;
+}
+
+.coffee-extended .description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-style: italic;
+}
