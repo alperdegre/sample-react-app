@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import classes from './Header.module.css';
 import { ReactComponent as Logo } from '../../assets/icons/coffee.svg';
 import HeaderButton from './HeaderButton';
@@ -24,10 +24,10 @@ function Header() {
 
   return (
     <header className={navbarClasses}>
-      <button className={classes.logo} type="button">
+      <Link className={classes.logo} to="/">
         <Logo />
         <h1>COFFEE SHOP</h1>
-      </button>
+      </Link>
       <div>
         <HeaderButton text="Home" to="/" />
         <HeaderButton text="About" to="/" />
