@@ -15,12 +15,12 @@ main {
 }
 
 .container {
-  width: 80rem;
+  width: 70%;
   margin: 0 auto;
 }
 
 .container-flex {
-  width: 80rem;
+  width: 70%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -34,25 +34,25 @@ main {
   html {
     font-size: 16px;
   }
-  .container {
+  /* .container {
     width: 80rem;
   }
   .container-flex {
     width: 80rem;
-  }
+  } */
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
   html {
     font-size: 14px;
   }
-  .container {
+  /* .container {
     width: 60rem;
   }
 
   .container-flex {
     width: 60rem;
-  }
+  } */
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {

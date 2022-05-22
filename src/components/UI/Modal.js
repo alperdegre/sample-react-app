@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Backdrop from './Backdrop';
 import ModalOverlay from './ModalOverlay';
 
-const portalElement = document.getElementById('overlays');
+const portalElement = document.getElementById('overlay');
 
 function Modal({ children, onClose }) {
   return (
