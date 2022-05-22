@@ -28,7 +28,7 @@
   background-color: #fff;
 }
 
-.selector-input {
+.selector-amount {
   flex-grow: 1;
   font-size: 1.8rem;
   font-weight: 700;
@@ -36,10 +36,6 @@
   text-align: center;
   border: none;
   background-color: #f1f0ed;
-}
-
-.selector-input:focus {
-  outline: none;
 }
 
 .cart-item-info {
