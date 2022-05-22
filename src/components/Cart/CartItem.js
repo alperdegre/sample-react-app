@@ -5,9 +5,11 @@ import CartContext from '../../store/cart-context';
 
 function CartItem({ id, name, price, grindType, amount }) {
   const cartContext = useContext(CartContext);
+
   // This will be used to add item to cart context
   const addItemHandler = () => {
     cartContext.addItem({
+      id,
       name,
       price,
       grindType,
@@ -15,9 +17,13 @@ function CartItem({ id, name, price, grindType, amount }) {
     });
   };
 
-  // This will be used to remove item from cart context
+  // This will be used to subtract one item from cart context
+  const subtractItemHandler = () => {
+    cartContext.subtractOneItem(id, grindType);
+  };
+
   const removeItemHandler = () => {
-    cartContext.removeItem({ id, grindType });
+    cartContext.removeItem(id, grindType);
   };
 
   return (
@@ -26,7 +32,7 @@ function CartItem({ id, name, price, grindType, amount }) {
         <button
           className={classes['selector-button']}
           type="button"
-          onClick={removeItemHandler}
+          onClick={subtractItemHandler}
         >
           -
         </button>
@@ -41,13 +47,20 @@ function CartItem({ id, name, price, grindType, amount }) {
       </div>
       <div className={classes['cart-item-info']}>
         <div className={classes['cart-item-name']}>{name}</div>
-        <div className={classes['cart-item-details']}>
-          GRIND TYPE : {grindType}
-        </div>
+        <div className={classes['cart-item-details']}>TYPE : {grindType}</div>
       </div>
       <div className={classes['cart-item-price-info']}>
         <div className={classes['cart-item-price-title']}>Total</div>
-        <div className={classes['cart-item-price']}>$ {price}</div>
+        <div className={classes['cart-item-price']}>
+          {(amount * price).toFixed(2)}
+        </div>
+        <button
+          className={classes['cart-item-remove']}
+          type="button"
+          onClick={removeItemHandler}
+        >
+          Remove
+        </button>
       </div>
     </div>
   );
@@ -56,7 +69,7 @@ function CartItem({ id, name, price, grindType, amount }) {
 CartItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   grindType: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
 };

@@ -19,6 +19,7 @@ function ProductsPage() {
             return (
               <ProductItem
                 key={coffee.id}
+                id={coffee.id}
                 name={coffee.name}
                 description={coffee.description}
                 price={coffee.price.toString()}
@@ -33,6 +34,7 @@ function ProductsPage() {
             return (
               <ProductItem
                 key={coffee.id}
+                id={coffee.id}
                 name={coffee.name}
                 description={coffee.description}
                 price={coffee.price.toString()}
@@ -47,6 +49,7 @@ function ProductsPage() {
             return (
               <ProductItem
                 key={coffee.id}
+                id={coffee.id}
                 name={coffee.name}
                 description={coffee.description}
                 price={coffee.price.toString()}

@@ -17,13 +17,13 @@ function ProductAmountSelector({ onAmountChange }) {
 
   const plusButtonClicked = () => {
     if (selectedAmount < 99) {
-      setSelectedAmount((prev) => +prev + 1);
+      setSelectedAmount((prev) => (+prev + 1).toString());
     }
   };
 
   const minusButtonClicked = () => {
     if (selectedAmount > 0) {
-      setSelectedAmount((prev) => +prev - 1);
+      setSelectedAmount((prev) => (+prev - 1).toString());
     }
   };
 

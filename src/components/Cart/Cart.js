@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
-import ProductItem from '../ProductsPage/ProductItem';
+import CartContext from '../../store/cart-context';
 
 function Cart({ onClose }) {
+  const cartContext = useContext(CartContext);
   const checkoutHandler = () => {};
   return (
     <Modal onClose={onClose}>
       <div className={classes['cart-title']}>SHOPPING CART</div>
-      {/* Here will be a check like 
-      cartContext.items.length !== 0 ? <Show Cart Items> : <Show No Items Div> 
-      After we add context for cart items
-      */}
-      <CartItem />
-      <ProductItem name="Test" description="Test" price="20" />
-      <p className={classes['cart-no-items']}>
-        There are no items in your cart
-      </p>
+      {cartContext.items.length !== 0 ? (
+        cartContext.items.map((item) => {
+          return (
+            <CartItem
+              key={item.name}
+              id={item.id}
+              name={item.name}
+              grindType={item.grindType}
+              price={item.price}
+              amount={item.amount}
+            />
+          );
+        })
+      ) : (
+        <p className={classes['cart-no-items']}>
+          There are no items in your cart
+        </p>
+      )}
       <div className={classes['cart-total']}>
         <div className={classes['cart-total-title']}>Total</div>
-        <div>$ 50.00</div>
+        <div>$ {cartContext.totalPrice.toFixed(2)}</div>
       </div>
       <div className={classes['cart-controls']}>
         <div

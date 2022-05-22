@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import classes from './ProductItem.module.css';
 import ProductDropdown from './ProductDropdown';
 import ProductAmountSelector from './ProductAmountSelector';
+import CartContext from '../../store/cart-context';
 
-function ProductItem({ name, description, price }) {
+function ProductItem({ id, name, description, price }) {
   const [isSelected, setIsSelected] = useState(false);
   const [selectedType, setSelectedType] = useState({
     id: 0,
@@ -12,6 +13,7 @@ function ProductItem({ name, description, price }) {
     value: 'no',
   });
   const [selectedAmount, setSelectedAmount] = useState(0);
+  const cartContext = useContext(CartContext);
 
   const dropdownItems = [
     { id: 1, title: 'Extra Coarse (Cold Brew)', value: 'extra-coarse' },
@@ -40,7 +42,19 @@ function ProductItem({ name, description, price }) {
   };
 
   const productAmountChangeHandler = (amount) => {
-    setSelectedAmount(amount);
+    setSelectedAmount(+amount);
+  };
+
+  const addToCartHandler = () => {
+    if (selectedType.value !== 'no') {
+      cartContext.addItem({
+        id,
+        name,
+        price,
+        grindType: selectedType.title,
+        amount: selectedAmount,
+      });
+    }
   };
 
   return (
@@ -89,7 +103,11 @@ function ProductItem({ name, description, price }) {
             <h4 className={classes['product-price-total']}>
               {(selectedAmount * price).toFixed(2)} $
             </h4>
-            <button className={classes['add-to-cart']} type="button">
+            <button
+              className={classes['add-to-cart']}
+              type="button"
+              onClick={addToCartHandler}
+            >
               Add to Cart
             </button>
           </div>
@@ -100,6 +118,7 @@ function ProductItem({ name, description, price }) {
 }
 
 ProductItem.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,

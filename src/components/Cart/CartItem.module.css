@@ -1,6 +1,6 @@
 .cart-item-container {
   display: flex;
-  height: 5rem;
+  height: 5.5rem;
   align-items: center;
   padding: 0.4rem;
   justify-content: space-between;
@@ -8,12 +8,16 @@
 
 .cart-item-amount-selector {
   height: 100%;
+  width: 110px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
 
 .selector-button {
-  flex-grow: 2;
+  flex-grow: 1;
   height: 100%;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 0.4rem;
   font-size: 1.4rem;
   font-weight: 800;
   text-align: center;
@@ -32,7 +36,7 @@
   flex-grow: 1;
   font-size: 1.8rem;
   font-weight: 700;
-  height: 100%;
+  width: 30px;
   text-align: center;
   border: none;
   background-color: #f1f0ed;
@@ -60,6 +64,7 @@
 .cart-item-price-info {
   text-align: right;
   height: 100%;
+  width: 130px;
 }
 
 .cart-item-price-title {
@@ -74,4 +79,36 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 1.8rem;
+}
+
+.cart-item-remove {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.cart-item-remove:hover {
+  color: #50334b;
+}
+
+@media only screen and (max-width: 575px) {
+  .cart-item-details {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+  }
+
+  .cart-item-name {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .cart-item-price {
+    font-size: 1.4rem;
+  }
 }

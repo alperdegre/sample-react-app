@@ -23,12 +23,45 @@ const cartReducer = (state, action) => {
     if (existingItemIx !== -1) {
       const updatedItem = {
         ...existingItem,
-        amount: existingItem.amount + action.item.amount,
+        amount: +existingItem.amount + item.amount,
+        itemTotal: existingItem.itemTotal + item.amount * item.price,
       };
       updatedItems = [...items];
       updatedItems[existingItemIx] = updatedItem;
     } else {
-      updatedItems = items.concat(action.item);
+      updatedItems = items.concat({
+        ...item,
+        itemTotal: item.price * item.amount,
+      });
+    }
+
+    return {
+      ...state,
+      items: updatedItems,
+      totalPrice: updatedTotalPrice,
+    };
+  }
+  if (action.type === 'SUBTRACT_ONE_ITEM') {
+    const { items, totalPrice } = state;
+    const { id, grindType } = action.payload;
+    const existingItemIx = items.findIndex(
+      (foundItem) => foundItem.id === id && foundItem.grindType === grindType
+    );
+    const existingItem = items[existingItemIx];
+    const updatedTotalPrice = Math.abs(totalPrice - existingItem.price);
+    let updatedItems;
+    if (existingItem.amount === 1) {
+      updatedItems = items.filter((item) => {
+        return !((item.id === id) * (item.grindType === grindType));
+      });
+    } else {
+      const updatedItem = {
+        ...existingItem,
+        amount: existingItem.amount - 1,
+        itemTotal: existingItem.itemTotal - existingItem.price,
+      };
+      updatedItems = [...items];
+      updatedItems[existingItemIx] = updatedItem;
     }
 
     return {
@@ -39,23 +72,16 @@ const cartReducer = (state, action) => {
   }
   if (action.type === 'REMOVE_ITEM') {
     const { items, totalPrice } = state;
-    const { id, grindType } = action;
-    const existingItemIx = items.findIndex((foundItem) => {
-      return foundItem.id === id && foundItem.grindType === grindType;
-    });
+    const { id, grindType } = action.payload;
+    const existingItemIx = items.findIndex(
+      (foundItem) => foundItem.id === id && foundItem.grindType === grindType
+    );
     const existingItem = items[existingItemIx];
-    const updatedTotalPrice = Math.abs(totalPrice - existingItem.price);
-    let updatedItems;
+    const updatedTotalPrice = Math.abs(totalPrice - existingItem.itemTotal);
 
-    if (existingItem.amount === 1) {
-      updatedItems = items.filter((item) => {
-        return item.id !== id && item.grindType !== grindType;
-      });
-    } else {
-      const updatedItem = { ...existingItem, amount: existingItem.amount - 1 };
-      updatedItems = [...items];
-      updatedItems[existingItemIx] = updatedItem;
-    }
+    const updatedItems = items.filter((item) => {
+      return !((item.id === id) * (item.grindType === grindType));
+    });
 
     return {
       ...state,
@@ -76,8 +102,15 @@ function CartProvider({ children }) {
     dispatchCartAction({ type: 'ADD_ITEM', item });
   };
 
+  const subtractOneItemFromCartHandler = (id, grindType) => {
+    dispatchCartAction({
+      type: 'SUBTRACT_ONE_ITEM',
+      payload: { id, grindType },
+    });
+  };
+
   const removeItemFromCartHandler = (id, grindType) => {
-    dispatchCartAction({ type: 'REMOVE_ITEM', id, grindType });
+    dispatchCartAction({ type: 'REMOVE_ITEM', payload: { id, grindType } });
   };
 
   const cartContext = useMemo(() => {
@@ -85,6 +118,7 @@ function CartProvider({ children }) {
       items: cartState.items,
       totalPrice: cartState.totalPrice,
       addItem: addItemToCartHandler,
+      subtractOneItem: subtractOneItemFromCartHandler,
       removeItem: removeItemFromCartHandler,
     };
   }, [cartState]);
