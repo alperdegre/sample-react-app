@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
+import CartItem from './CartItem';
+import ProductItem from '../ProductsPage/ProductItem';
 
 function Cart({ onClose }) {
   const checkoutHandler = () => {};
@@ -12,6 +14,8 @@ function Cart({ onClose }) {
       cartContext.items.length !== 0 ? <Show Cart Items> : <Show No Items Div> 
       After we add context for cart items
       */}
+      <CartItem />
+      <ProductItem name="Test" description="Test" price="20" />
       <p className={classes['cart-no-items']}>
         There are no items in your cart
       </p>
