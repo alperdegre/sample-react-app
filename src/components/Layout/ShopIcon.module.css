@@ -1,0 +1,31 @@
+.shop-icon {
+  color: #ddd;
+  width: 50px;
+  height: 23px;
+  padding: 0 10px;
+  display: inline-block;
+  cursor: pointer;
+  transform: translateY(5px);
+}
+
+.shop-icon:hover {
+  color: #fff;
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .shop-icon {
+    transform: translateY(1px);
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .shop-icon {
+    transform: translateY(1px);
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .shop-icon {
+    transform: translateY(1px);
+  }
+}

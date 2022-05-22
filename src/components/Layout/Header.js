@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import classes from './Header.module.css';
 import { ReactComponent as Logo } from '../../assets/icons/coffee.svg';
 import HeaderButton from './HeaderButton';
+import ShopIcon from './ShopIcon';
 
 function Header() {
   const { pathname } = useLocation();
@@ -28,10 +29,11 @@ function Header() {
         <Logo />
         <h1>COFFEE SHOP</h1>
       </Link>
-      <div>
+      <div className={classes['navbar-options']}>
         <HeaderButton text="Home" to="/" />
         <HeaderButton text="About" to="/" />
         <HeaderButton text="Products" to="/products" />
+        {pathname === '/products' && <ShopIcon />}
       </div>
     </header>
   );
