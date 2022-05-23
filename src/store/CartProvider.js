@@ -12,7 +12,6 @@ const cartReducer = (state, action) => {
     const { items, totalPrice } = state;
     const { item } = action;
     const updatedTotalPrice = totalPrice + item.price * item.amount;
-
     const existingItemIx = items.findIndex(
       (foundItem) =>
         foundItem.id === item.id && foundItem.grindType === item.grindType
@@ -52,7 +51,10 @@ const cartReducer = (state, action) => {
     let updatedItems;
     if (existingItem.amount === 1) {
       updatedItems = items.filter((item) => {
-        return !((item.id === id) * (item.grindType === grindType));
+        return !(
+          item.id === existingItem.id &&
+          item.grindType === existingItem.grindType
+        );
       });
     } else {
       const updatedItem = {

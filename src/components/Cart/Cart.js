@@ -6,13 +6,13 @@ import CartItem from './CartItem';
 import CartContext from '../../store/cart-context';
 
 function Cart({ onClose }) {
-  const cartContext = useContext(CartContext);
+  const { items, totalPrice } = useContext(CartContext);
   const checkoutHandler = () => {};
   return (
     <Modal onClose={onClose}>
       <div className={classes['cart-title']}>SHOPPING CART</div>
-      {cartContext.items.length !== 0 ? (
-        cartContext.items.map((item) => {
+      {items.length !== 0 ? (
+        items.map((item) => {
           return (
             <CartItem
               key={item.name + item.grindType}
@@ -31,7 +31,7 @@ function Cart({ onClose }) {
       )}
       <div className={classes['cart-total']}>
         <div className={classes['cart-total-title']}>Total</div>
-        <div>$ {cartContext.totalPrice.toFixed(2)}</div>
+        <div>$ {totalPrice.toFixed(2)}</div>
       </div>
       <div className={classes['cart-controls']}>
         <div

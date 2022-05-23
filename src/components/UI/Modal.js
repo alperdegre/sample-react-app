@@ -13,6 +13,10 @@ function Modal({ children, onClose }) {
 
   useEffect(() => {
     modalRoot.appendChild(modal);
+
+    return () => {
+      modalRoot.removeChild(modal);
+    };
   });
 
   return (
