@@ -35,7 +35,6 @@ const cartReducer = (state, action) => {
     }
 
     return {
-      ...state,
       items: updatedItems,
       totalPrice: updatedTotalPrice,
     };
@@ -67,7 +66,6 @@ const cartReducer = (state, action) => {
     }
 
     return {
-      ...state,
       items: updatedItems,
       totalPrice: updatedTotalPrice,
     };
@@ -86,7 +84,6 @@ const cartReducer = (state, action) => {
     });
 
     return {
-      ...state,
       items: updatedItems,
       totalPrice: updatedTotalPrice,
     };
