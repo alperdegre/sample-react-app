@@ -5,11 +5,25 @@ import Header from './Header';
 
 describe('Header', () => {
   it('should render the header', () => {
+    const onShowCart = jest.fn();
+
     render(
       <MemoryRouter>
-        <Header />
+        <Header onShowCart={onShowCart} />
       </MemoryRouter>
     );
     expect(screen.getByRole('heading')).toBeInTheDocument();
+  });
+
+  it('should render the cart button on products', () => {
+    const onShowCart = jest.fn();
+
+    render(
+      <MemoryRouter initialEntries={['/products']}>
+        <Header onShowCart={onShowCart} />
+      </MemoryRouter>
+    );
+    const svg = document.getElementsByClassName('shop-icon').item(0);
+    expect(svg).toBeInTheDocument();
   });
 });

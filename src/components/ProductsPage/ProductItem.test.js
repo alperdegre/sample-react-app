@@ -5,12 +5,16 @@ import ProductItem from './ProductItem';
 
 describe('ProductItem', () => {
   it('should render a ProductItem with the name Coffee', () => {
-    render(<ProductItem name="Coffee" description="description" price="20" />);
+    render(
+      <ProductItem name="Coffee" description="description" price="20" id="1" />
+    );
     expect(screen.getByText('Coffee')).toBeInTheDocument();
   });
 
   it('should expand the item when the ProductItem is clicked', () => {
-    render(<ProductItem name="Coffee" description="description" price="20" />);
+    render(
+      <ProductItem name="Coffee" description="description" price="20" id="1" />
+    );
     act(() => {
       screen.getByText('Coffee').click();
     });
@@ -18,7 +22,9 @@ describe('ProductItem', () => {
   });
 
   it('should close the item when CLOSE button is clicked', () => {
-    render(<ProductItem name="Coffee" description="description" price="20" />);
+    render(
+      <ProductItem name="Coffee" description="description" price="20" id="1" />
+    );
     act(() => {
       screen.getByText('Coffee').click();
     });
@@ -31,7 +37,12 @@ describe('ProductItem', () => {
   it('should increment the price when the plus button is clicked', () => {
     const price = '20';
     render(
-      <ProductItem name="Coffee" description="description" price={price} />
+      <ProductItem
+        name="Coffee"
+        description="description"
+        price={price}
+        id="1"
+      />
     );
     act(() => {
       screen.getByText('Coffee').click();
@@ -47,7 +58,12 @@ describe('ProductItem', () => {
   it('should decrement the price when the plus button is clicked', () => {
     const price = '20';
     render(
-      <ProductItem name="Coffee" description="description" price={price} />
+      <ProductItem
+        name="Coffee"
+        description="description"
+        price={price}
+        id="1"
+      />
     );
     act(() => {
       screen.getByText('Coffee').click();
@@ -60,7 +76,9 @@ describe('ProductItem', () => {
   });
 
   it('should show the clicked option when a dropdown option is clicked', () => {
-    render(<ProductItem name="Coffee" description="description" price="20" />);
+    render(
+      <ProductItem name="Coffee" description="description" price="20" id="1" />
+    );
     act(() => {
       screen.getByText('Coffee').click();
     });

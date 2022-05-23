@@ -15,7 +15,7 @@ function Cart({ onClose }) {
         cartContext.items.map((item) => {
           return (
             <CartItem
-              key={item.name}
+              key={item.name + item.grindType}
               id={item.id}
               name={item.name}
               grindType={item.grindType}

@@ -11,6 +11,7 @@ function ShopIcon({ onShowCart }) {
       onKeyDown={onShowCart}
       role="button"
       tabIndex={0}
+      aria-label="Open cart"
     >
       <ShoppingCart />
     </div>

@@ -38,6 +38,6 @@ describe('ProductAmountSelector', () => {
       screen.getByText('+').click();
     });
 
-    expect(onAmountChange).toHaveBeenCalledWith(1);
+    expect(onAmountChange).toHaveBeenCalledWith('1');
   });
 });
