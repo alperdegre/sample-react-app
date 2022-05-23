@@ -12,9 +12,67 @@
   color: #fff;
 }
 
+.badge {
+  position: absolute;
+  top: -12px;
+  right: -4px;
+  display: none;
+  min-width: 22px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  letter-spacing: 0;
+  padding: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 6px;
+  background-color: red;
+}
+
+.badge-bump {
+  animation: bump 300ms ease-out;
+}
+
+.badge-show {
+  display: inline-block;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+  .badge {
+    top: -12px;
+    right: -4px;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+}
+
 @media only screen and (max-width: 991px) and (min-width: 768px) {
   .shop-icon {
     transform: translateY(1px);
+  }
+  .badge {
+    top: -10px;
+    right: -4px;
+    padding: 0.3rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -22,10 +80,21 @@
   .shop-icon {
     transform: translateY(1px);
   }
+  .badge {
+    top: -9px;
+    right: -4px;
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 575px) {
   .shop-icon {
     transform: translateY(1px);
+  }
+  .badge {
+    top: -9px;
+    right: -4px;
+    padding: 0.3rem;
+    font-size: 1.2rem;
   }
 }
