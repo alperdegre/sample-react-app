@@ -7,9 +7,9 @@ import CheckoutAddress from './CheckoutAddress';
 function CheckoutPage() {
   const [pageState, setPageState] = useState(0);
   const { items } = useContext(CartContext);
-
+  console.log(items);
   const goNextHandler = () => {
-    if (pageState >= 0 && pageState < 2 && items.length !== 0) {
+    if (pageState >= 0 && pageState < 2) {
       setPageState((prev) => prev + 1);
     }
   };
@@ -33,7 +33,7 @@ function CheckoutPage() {
           onClick={goNextHandler}
           onKeyDown={goNextHandler}
         >
-          NEXT
+          {pageState === 2 ? `PLACE YOUR ORDER` : `NEXT`}
         </button>
         {pageState > 0 && (
           <button

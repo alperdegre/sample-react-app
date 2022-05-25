@@ -5,7 +5,8 @@ import CartContext from '../../store/cart-context';
 
 function CheckoutCart() {
   const { items, totalPrice } = useContext(CartContext);
-  const taxPrice = '5.00';
+  const shippingPrice = '5.00';
+  const taxPrice = '1.00';
 
   return (
     <>
@@ -42,7 +43,7 @@ function CheckoutCart() {
           </div>
           <div className={classes['price-row']}>
             <h4 className={classes['checkout-total-title']}>Shipping</h4>
-            <div className={classes['checkout-price']}>$ {taxPrice}</div>
+            <div className={classes['checkout-price']}>$ {shippingPrice}</div>
           </div>
         </div>
         <div className={classes['taxes-total']}>
@@ -51,14 +52,12 @@ function CheckoutCart() {
               Total (tax excl.)
             </h4>
             <div className={classes['checkout-price']}>
-              $ {(+totalPrice.toFixed(2) + +taxPrice).toFixed(2)}
+              $ {(+totalPrice.toFixed(2) + +shippingPrice).toFixed(2)}
             </div>
           </div>
           <div className={classes['price-row']}>
             <h4 className={classes['checkout-total-title']}>Taxes</h4>
-            <div className={classes['checkout-price']}>
-              $ {(+totalPrice.toFixed(2) + +taxPrice).toFixed(2)}
-            </div>
+            <div className={classes['checkout-price']}>$ {taxPrice}</div>
           </div>
         </div>
         <div className={classes['total-price']}>
@@ -67,7 +66,8 @@ function CheckoutCart() {
               Total (tax incl.)
             </h4>
             <div className={classes['checkout-price']}>
-              $ {(+totalPrice.toFixed(2) + +taxPrice).toFixed(2)}
+              ${' '}
+              {(+totalPrice.toFixed(2) + +shippingPrice + +taxPrice).toFixed(2)}
             </div>
           </div>
         </div>
