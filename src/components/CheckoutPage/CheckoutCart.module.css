@@ -1,0 +1,80 @@
+.checkout-cart {
+  width: 60%;
+  margin-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+.checkout-details {
+  width: 40%;
+  text-align: left;
+}
+
+.cart-no-items {
+  color: #130912;
+  font-size: 1.4rem;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 2.6rem 0 0.6rem 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 0.6rem;
+}
+
+.checkout-total-title {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.checkout-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: end;
+}
+
+.subtotal-shipping {
+  padding: 1.4rem 0;
+  border-bottom: 3px solid #130912;
+}
+
+.taxes-total {
+  padding: 1.4rem 0;
+  border-bottom: 3px solid #130912;
+}
+
+.total-price {
+  padding: 1.4rem 0;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .checkout-cart {
+    width: 100%;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .checkout-details {
+    width: 100%;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .checkout-cart {
+    width: 100%;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .checkout-details {
+    width: 100%;
+    margin-right: 2rem;
+    padding-bottom: 2rem;
+  }
+}

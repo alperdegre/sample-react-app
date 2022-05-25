@@ -1,0 +1,82 @@
+.checkout-main {
+  background-color: #f1f0ed;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+
+.checkout-title {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+.checkout-container {
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-basis: 0;
+  min-height: 32rem;
+}
+
+.checkout-container h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  padding: 0.6rem 0;
+  border-bottom: solid 3px;
+}
+
+.checkout-next-button {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  border: none;
+  background-color: transparent;
+  color: #130912;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.checkout-next-button:hover {
+  color: #63425d;
+}
+
+.checkout-back-button {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  border: none;
+  background-color: transparent;
+  color: #130912;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.checkout-back-button:hover {
+  color: #63425d;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .checkout-container {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .checkout-container {
+    display: block;
+  }
+}
+
+/* NEW STUFF */
+

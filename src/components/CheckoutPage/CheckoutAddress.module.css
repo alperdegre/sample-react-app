@@ -1,0 +1,45 @@
+.address-wrapper {
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.address-label {
+  width: 50%;
+  padding: 0.2rem;
+}
+
+.address-label h4 {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.address-input {
+  height: 40px;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 10px;
+  padding-left: 0.8rem;
+  width: 100%;
+}
+
+.address-input:focus {
+  outline: none;
+}
+
+.address-row {
+  padding: 0.4rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address-label-full {
+  width: 100%;
+  padding: 0.2rem;
+}
+
+.address-label-full h4 {
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
