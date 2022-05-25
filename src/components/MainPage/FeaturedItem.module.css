@@ -48,7 +48,7 @@
 
 @media only screen and (max-width: 767px) and (min-width: 576px) {
   .card {
-    width: 90%;
+    width: 70%;
     margin: 1rem auto;
   }
   .card img {
@@ -65,7 +65,7 @@
 
 @media only screen and (max-width: 575px) {
   .card {
-    width: 90%;
+    width: 70%;
     margin: 1rem auto;
   }
   .card img {
