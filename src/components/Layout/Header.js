@@ -16,6 +16,7 @@ function Header({ onShowCart }) {
         setNavbarClasses(`${classes.navbar}`);
         break;
       case '/products':
+      case '/about':
         setNavbarClasses(`${classes.navbar} ${classes.navbar_products}`);
         break;
       default:
@@ -32,7 +33,7 @@ function Header({ onShowCart }) {
       </Link>
       <div className={classes['navbar-options']}>
         <HeaderButton text="Home" to="/" />
-        <HeaderButton text="About" to="/" />
+        <HeaderButton text="About" to="/about" />
         <HeaderButton text="Products" to="/products" />
         {pathname === '/products' && <ShopIcon onShowCart={onShowCart} />}
       </div>

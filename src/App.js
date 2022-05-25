@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import MainPage from './components/MainPage/MainPage';
 import ProductsPage from './components/ProductsPage/ProductsPage';
+import AboutPage from './components/AboutPage/AboutPage';
 import Footer from './components/Layout/Footer';
 import Cart from './components/Cart/Cart';
 
@@ -13,6 +14,9 @@ function App() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (cartIsShown) {
+      setCartIsShown(false);
+    }
   }, [pathname]);
 
   const hideCart = () => {
@@ -29,6 +33,7 @@ function App() {
       <Header onShowCart={showCart} />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductsPage />} />
       </Routes>
       <Footer />

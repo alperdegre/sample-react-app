@@ -1,13 +1,13 @@
 import React from 'react';
 import FeaturedProducts from './FeaturedProducts';
-import HeaderImage from './HeaderImage';
+import MainImage from './MainImage';
 import ProductMessage from './ProductMessage';
 import Socials from './Socials';
 
 function MainPage() {
   return (
     <main>
-      <HeaderImage />
+      <MainImage />
       <ProductMessage />
       <FeaturedProducts />
       <Socials />

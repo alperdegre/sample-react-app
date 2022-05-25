@@ -1,0 +1,95 @@
+.about-wrapper {
+  background-color: #0e070d;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container {
+  min-height: 20rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 0;
+}
+
+.about-image {
+  height: 100%;
+  border-radius: 20px;
+  width: 25rem;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.about-text {
+  color: white;
+  padding: 1.6rem;
+  flex-grow: 2;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6rem;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  text-indent: 2rem;
+  text-align: justify;
+}
+
+.about-text h2 {
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+
+@media only screen and (max-width: 1399px) and (min-width: 1200px) {
+    .about-text p {
+        font-size: 1.1rem;
+      }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .about-image {
+        width: 18rem;
+      }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  .about-image {
+    width: 18rem;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .about-container {
+    display: block;
+  }
+  .about-image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .about-container {
+    display: block;
+  }
+  .about-image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .about-container {
+    display: block;
+  }
+  .about-image {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+}

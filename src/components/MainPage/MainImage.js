@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import classes from './HeaderImage.module.css';
+import classes from './MainImage.module.css';
 
-function HeaderImage() {
+function MainImage() {
   return (
     <div className={classes['header-image']}>
       <div className="container">
@@ -21,4 +21,4 @@ function HeaderImage() {
   );
 }
 
-export default HeaderImage;
+export default MainImage;
