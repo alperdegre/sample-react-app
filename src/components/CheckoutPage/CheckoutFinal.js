@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import classes from './CheckoutFinal.module.css';
+import CheckoutNextButton from './CheckoutNextButton';
+import CartContext from '../../store/cart-context';
 
 function CheckoutFinal({ addressData, cartData, cardData }) {
+  const { clearCart } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const setOrderHandler = () => {
+    // We have all the data we need to make an order.
+    // We can send it to the server.
+    // So we will clear the cart for now.
+    clearCart();
+    navigate('../success', { replace: true });
+  };
   return (
     <div className={classes['checkout-final-wrapper']}>
       <h3>ADDRESS INFO</h3>
@@ -110,6 +123,7 @@ function CheckoutFinal({ addressData, cartData, cardData }) {
           </div>
         </div>
       </div>
+      <CheckoutNextButton onClick={setOrderHandler} text="PLACE YOUR ORDER" />
     </div>
   );
 }

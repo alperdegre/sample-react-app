@@ -5,12 +5,12 @@ import CheckoutPage from './CheckoutPage';
 
 describe('CheckoutPage', () => {
   it('should render the CheckoutPage', () => {
-    render(<CheckoutPage />);
+    render(<CheckoutPage onCheckoutMade={jest.fn()} />);
     expect(screen.getByText('CHECKOUT')).toBeInTheDocument();
   });
 
   it('should render the Back button only after Next is clicked', () => {
-    render(<CheckoutPage />);
+    render(<CheckoutPage onCheckoutMade={jest.fn()} />);
     expect(screen.queryByText('BACK')).not.toBeInTheDocument();
 
     act(() => {
@@ -21,12 +21,12 @@ describe('CheckoutPage', () => {
   });
 
   it('should render Address Details first', () => {
-    render(<CheckoutPage />);
+    render(<CheckoutPage onCheckoutMade={jest.fn()} />);
     expect(screen.getByText('ADDRESS DETAILS')).toBeInTheDocument();
   });
 
   it('should render Cart Details second', () => {
-    render(<CheckoutPage />);
+    render(<CheckoutPage onCheckoutMade={jest.fn()} />);
 
     act(() => {
       screen.getByText('NEXT').click();
@@ -36,7 +36,7 @@ describe('CheckoutPage', () => {
   });
 
   it('should render Credit Card Info third', () => {
-    render(<CheckoutPage />);
+    render(<CheckoutPage onCheckoutMade={jest.fn()} />);
 
     act(() => {
       screen.getByText('NEXT').click();

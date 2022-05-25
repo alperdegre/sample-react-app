@@ -88,6 +88,10 @@ const cartReducer = (state, action) => {
       totalPrice: updatedTotalPrice,
     };
   }
+  if (action.type === 'CLEAR_CART') {
+    return defaultCartState;
+  }
+
   return defaultCartState;
 };
 
@@ -112,6 +116,10 @@ function CartProvider({ children }) {
     dispatchCartAction({ type: 'REMOVE_ITEM', payload: { id, grindType } });
   };
 
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: 'CLEAR_CART' });
+  };
+
   const cartContext = useMemo(() => {
     return {
       items: cartState.items,
@@ -119,6 +127,7 @@ function CartProvider({ children }) {
       addItem: addItemToCartHandler,
       subtractOneItem: subtractOneItemFromCartHandler,
       removeItem: removeItemFromCartHandler,
+      clearCart: clearCartHandler,
     };
   }, [cartState]);
 

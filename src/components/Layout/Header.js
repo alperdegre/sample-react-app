@@ -42,7 +42,11 @@ function Header({ onShowCart, showIcon }) {
 
 Header.propTypes = {
   onShowCart: PropTypes.func.isRequired,
-  showIcon: PropTypes.bool.isRequired,
+  showIcon: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  showIcon: true,
 };
 
 export default Header;
