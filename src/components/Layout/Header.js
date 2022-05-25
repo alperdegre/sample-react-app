@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classes from './Header.module.css';
 import { ReactComponent as Logo } from '../../assets/icons/coffee.svg';
 import HeaderButton from './HeaderButton';
 import ShopIcon from './ShopIcon';
+import CartContext from '../../store/cart-context';
 
 function Header({ onShowCart }) {
   const { pathname } = useLocation();
+  const { totalPrice } = useContext(CartContext);
   const [navbarClasses, setNavbarClasses] = useState(`${classes.navbar}`);
 
   useEffect(() => {
@@ -35,7 +37,9 @@ function Header({ onShowCart }) {
         <HeaderButton text="Home" to="/" />
         <HeaderButton text="About" to="/about" />
         <HeaderButton text="Products" to="/products" />
-        {pathname === '/products' && <ShopIcon onShowCart={onShowCart} />}
+        {(pathname === '/products' || totalPrice !== 0) && (
+          <ShopIcon onShowCart={onShowCart} />
+        )}
       </div>
     </header>
   );
