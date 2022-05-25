@@ -1,12 +1,30 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import CartItem from '../Cart/CartItem';
 import classes from './CheckoutCart.module.css';
 import CartContext from '../../store/cart-context';
+import CheckoutNextButton from './CheckoutNextButton';
 
-function CheckoutCart() {
+function CheckoutCart({ onCoffeesSet }) {
   const { items, totalPrice } = useContext(CartContext);
   const shippingPrice = '5.00';
   const taxPrice = '1.00';
+
+  const setCoffeesHandler = () => {
+    const orderData = {
+      order: [...items],
+      subTotal: totalPrice.toFixed(2),
+      shipping: shippingPrice,
+      taxExclTotal: (totalPrice + parseFloat(shippingPrice)).toFixed(2),
+      tax: taxPrice,
+      total: (
+        totalPrice +
+        parseFloat(shippingPrice) +
+        parseFloat(taxPrice)
+      ).toFixed(2),
+    };
+    onCoffeesSet(orderData);
+  };
 
   return (
     <>
@@ -71,9 +89,14 @@ function CheckoutCart() {
             </div>
           </div>
         </div>
+        <CheckoutNextButton onClick={setCoffeesHandler} text="NEXT" />
       </div>
     </>
   );
 }
+
+CheckoutCart.propTypes = {
+  onCoffeesSet: PropTypes.func.isRequired,
+};
 
 export default CheckoutCart;

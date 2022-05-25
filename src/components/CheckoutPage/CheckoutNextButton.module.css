@@ -1,0 +1,16 @@
+.checkout-next-button {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  border: none;
+  background-color: transparent;
+  color: #130912;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.checkout-next-button:hover {
+  color: #63425d;
+}

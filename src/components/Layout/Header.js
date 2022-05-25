@@ -7,7 +7,7 @@ import HeaderButton from './HeaderButton';
 import ShopIcon from './ShopIcon';
 import CartContext from '../../store/cart-context';
 
-function Header({ onShowCart }) {
+function Header({ onShowCart, showIcon }) {
   const { pathname } = useLocation();
   const { totalPrice } = useContext(CartContext);
   const [navbarClasses, setNavbarClasses] = useState(`${classes.navbar}`);
@@ -33,9 +33,8 @@ function Header({ onShowCart }) {
         <HeaderButton text="Home" to="/" />
         <HeaderButton text="About" to="/about" />
         <HeaderButton text="Products" to="/products" />
-        {(pathname === '/products' || totalPrice !== 0) && (
-          <ShopIcon onShowCart={onShowCart} />
-        )}
+        {(pathname === '/products' || totalPrice !== 0) &&
+          showIcon === true && <ShopIcon onShowCart={onShowCart} />}
       </div>
     </header>
   );
@@ -43,6 +42,7 @@ function Header({ onShowCart }) {
 
 Header.propTypes = {
   onShowCart: PropTypes.func.isRequired,
+  showIcon: PropTypes.bool.isRequired,
 };
 
 export default Header;

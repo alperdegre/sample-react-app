@@ -20,19 +20,6 @@ describe('CheckoutPage', () => {
     expect(screen.getByText('BACK')).toBeInTheDocument();
   });
 
-  it('should change next button to place your order at last step', () => {
-    render(<CheckoutPage />);
-    expect(screen.queryByText('PLACE YOUR ORDER')).not.toBeInTheDocument();
-
-    act(() => {
-      screen.getByText('NEXT').click();
-      screen.getByText('NEXT').click();
-      screen.getByText('NEXT').click();
-    });
-
-    expect(screen.getByText('PLACE YOUR ORDER')).toBeInTheDocument();
-  });
-
   it('should render Address Details first', () => {
     render(<CheckoutPage />);
     expect(screen.getByText('ADDRESS DETAILS')).toBeInTheDocument();

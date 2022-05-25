@@ -12,6 +12,7 @@ import CheckoutPage from './components/CheckoutPage/CheckoutPage';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
+  const [iconIsShown, setIconIsShown] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
     if (cartIsShown) {
       setCartIsShown(false);
     }
+    setIconIsShown(true);
   }, [pathname]);
 
   const hideCart = () => {
@@ -29,15 +31,26 @@ function App() {
     setCartIsShown(true);
   };
 
+  const checkoutMadeHandler = (isCheckoutMade) => {
+    if (isCheckoutMade) {
+      setIconIsShown(false);
+    } else {
+      setIconIsShown(true);
+    }
+  };
+
   return (
     <>
       {cartIsShown && <Cart onClose={hideCart} />}
-      <Header onShowCart={showCart} />
+      <Header onShowCart={showCart} showIcon={iconIsShown} />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductsPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route
+          path="/checkout"
+          element={<CheckoutPage onCheckoutMade={checkoutMadeHandler} />}
+        />
       </Routes>
       <Socials />
       <Footer />

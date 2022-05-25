@@ -4,12 +4,12 @@ import CheckoutAddress from './CheckoutAddress';
 
 describe('CheckoutAddress', () => {
   it('should render the CheckoutAddress', () => {
-    render(<CheckoutAddress />);
+    render(<CheckoutAddress onAddressSet={jest.fn()} />);
     expect(screen.getByText('ADDRESS DETAILS')).toBeInTheDocument();
   });
 
   it('should render the input labels', () => {
-    render(<CheckoutAddress />);
+    render(<CheckoutAddress onAddressSet={jest.fn()} />);
     expect(screen.getByText('First Name')).toBeInTheDocument();
     expect(screen.getByText('Last Name')).toBeInTheDocument();
     expect(screen.getByText('Address')).toBeInTheDocument();
@@ -20,7 +20,7 @@ describe('CheckoutAddress', () => {
   });
 
   it('should render the input fields', () => {
-    render(<CheckoutAddress />);
+    render(<CheckoutAddress onAddressSet={jest.fn()} />);
     expect(screen.getByPlaceholderText('First Name')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Last Name')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Address')).toBeInTheDocument();

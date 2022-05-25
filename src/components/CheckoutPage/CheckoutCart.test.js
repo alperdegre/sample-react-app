@@ -4,19 +4,19 @@ import CheckoutCart from './CheckoutCart';
 
 describe('CheckoutCart', () => {
   it('should render the CheckoutCart', () => {
-    render(<CheckoutCart />);
+    render(<CheckoutCart onCoffeesSet={jest.fn()} />);
     expect(screen.getByText('YOUR CART')).toBeInTheDocument();
   });
 
   it('should render the Cart div', () => {
-    render(<CheckoutCart />);
+    render(<CheckoutCart onCoffeesSet={jest.fn()} />);
     expect(
       screen.getByText('There are no items in your cart')
     ).toBeInTheDocument();
   });
 
   it('should render the Details div', () => {
-    render(<CheckoutCart />);
+    render(<CheckoutCart onCoffeesSet={jest.fn()} />);
     expect(screen.getByText('DETAILS')).toBeInTheDocument();
   });
 });

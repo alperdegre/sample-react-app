@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classes from './CheckoutCardInfo.module.css';
 import Visa from '../../assets/icons/visa-color.svg';
 import MasterCard from '../../assets/icons/mastercard-color.svg';
 import AmericanExpress from '../../assets/icons/amex-color.svg';
 import Discover from '../../assets/icons/discover-color.svg';
 import Default from '../../assets/icons/card-default-color.svg';
+import CheckoutNextButton from './CheckoutNextButton';
 
-function CheckoutCardInfo() {
+function CheckoutCardInfo({ onCardInfoSet }) {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [expirationDate, setExpirationDateNumber] = useState('');
   const [cardType, setCardType] = useState(undefined);
@@ -64,6 +68,26 @@ function CheckoutCardInfo() {
       setCVCNumber(event.target.value);
     }
   };
+
+  const setCardInfoHandler = () => {
+    // can add logic to check if the card info is valid
+    const cardInfo = {
+      firstName,
+      lastName,
+      cardNumber,
+      expirationDate,
+      cvcNumber,
+    };
+    onCardInfoSet(cardInfo);
+  };
+
+  const firstNameChangeHandler = (event) => {
+    setFirstName(event.target.value);
+  };
+
+  const lastNameChangeHandler = (event) => {
+    setLastName(event.target.value);
+  };
   return (
     <div className={classes['card-wrapper']}>
       <h3>CREDIT CARD INFORMATION</h3>
@@ -74,6 +98,8 @@ function CheckoutCardInfo() {
             type="text"
             placeholder="First Name"
             className={classes['card-input']}
+            value={firstName}
+            onChange={firstNameChangeHandler}
           />
         </div>
         <div className={classes['card-label']}>
@@ -82,6 +108,8 @@ function CheckoutCardInfo() {
             type="text"
             placeholder="Last Name"
             className={classes['card-input']}
+            value={lastName}
+            onChange={lastNameChangeHandler}
           />
         </div>
       </div>
@@ -172,8 +200,16 @@ function CheckoutCardInfo() {
           />
         </div>
       </div>
+      <CheckoutNextButton
+        text="PROCEED TO ORDER"
+        onClick={setCardInfoHandler}
+      />
     </div>
   );
 }
+
+CheckoutCardInfo.propTypes = {
+  onCardInfoSet: PropTypes.func.isRequired,
+};
 
 export default CheckoutCardInfo;

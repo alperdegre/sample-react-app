@@ -1,0 +1,177 @@
+.checkout-final-wrapper {
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.checkout-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.checkout-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 0;
+}
+
+.checkout-pair {
+  padding: 1.4rem;
+  width: 100%;
+}
+
+.product-item {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.product-item h4 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.product-item h5 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.product-half {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.product-description {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+.product-price-half {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.price-container {
+  text-align: end;
+}
+
+.product-sub-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  text-align: end;
+}
+
+.product-price {
+  text-align: right;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.order-item {
+  padding: 1.4rem 0;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.total-price-container h4 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.total-price-container h5 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.price-pair {
+  width: 25%;
+}
+
+.subtotal {
+  text-align: start;
+}
+
+.shipping {
+  text-align: center;
+}
+
+.tax {
+  text-align: center;
+}
+
+.total {
+  text-align: end;
+}
+
+@media only screen and (max-width: 767px) and (min-width: 576px) {
+  .total-price-container h4 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+  }
+
+  .shipping {
+    text-align: center;
+  }
+
+  .tax {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .total-price-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  .total-price-container h4 {
+    font-weight: 700;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  .price-pair {
+    width: 50%;
+    padding-bottom: 1.4rem;
+  }
+
+  .subtotal {
+    text-align: start;
+  }
+
+  .shipping {
+    text-align: end;
+  }
+
+  .tax {
+    text-align: start;
+  }
+
+  .total {
+    text-align: end;
+  }
+}
