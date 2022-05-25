@@ -7,6 +7,7 @@ import ProductsPage from './components/ProductsPage/ProductsPage';
 import AboutPage from './components/AboutPage/AboutPage';
 import Footer from './components/Layout/Footer';
 import Cart from './components/Cart/Cart';
+import Socials from './components/MainPage/Socials';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={<ProductsPage />} />
       </Routes>
+      <Socials />
       <Footer />
     </>
   );
