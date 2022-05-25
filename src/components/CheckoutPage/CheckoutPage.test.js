@@ -27,6 +27,7 @@ describe('CheckoutPage', () => {
     act(() => {
       screen.getByText('NEXT').click();
       screen.getByText('NEXT').click();
+      screen.getByText('NEXT').click();
     });
 
     expect(screen.getByText('PLACE YOUR ORDER')).toBeInTheDocument();
@@ -45,5 +46,16 @@ describe('CheckoutPage', () => {
     });
 
     expect(screen.getByText('YOUR CART')).toBeInTheDocument();
+  });
+
+  it('should render Credit Card Info third', () => {
+    render(<CheckoutPage />);
+
+    act(() => {
+      screen.getByText('NEXT').click();
+      screen.getByText('NEXT').click();
+    });
+
+    expect(screen.getByText('CREDIT CARD INFORMATION')).toBeInTheDocument();
   });
 });

@@ -3,13 +3,16 @@ import CheckoutCart from './CheckoutCart';
 import classes from './CheckoutPage.module.css';
 import CartContext from '../../store/cart-context';
 import CheckoutAddress from './CheckoutAddress';
+import CheckoutCardInfo from './CheckoutCardInfo';
 
 function CheckoutPage() {
   const [pageState, setPageState] = useState(0);
+
+  // eslint-disable-next-line no-unused-vars
   const { items } = useContext(CartContext);
-  console.log(items);
+
   const goNextHandler = () => {
-    if (pageState >= 0 && pageState < 2) {
+    if (pageState >= 0 && pageState < 3) {
       setPageState((prev) => prev + 1);
     }
   };
@@ -26,14 +29,14 @@ function CheckoutPage() {
       <div className={`container ${classes['checkout-container']}`}>
         {pageState === 0 && <CheckoutAddress />}
         {pageState === 1 && <CheckoutCart />}
-
+        {pageState === 2 && <CheckoutCardInfo />}
         <button
           className={classes['checkout-next-button']}
           type="button"
           onClick={goNextHandler}
           onKeyDown={goNextHandler}
         >
-          {pageState === 2 ? `PLACE YOUR ORDER` : `NEXT`}
+          {pageState === 3 ? `PLACE YOUR ORDER` : `NEXT`}
         </button>
         {pageState > 0 && (
           <button
