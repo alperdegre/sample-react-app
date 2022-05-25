@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import CartItem from '../Cart/CartItem';
 import classes from './CheckoutCart.module.css';
 import CartContext from '../../store/cart-context';
 import CheckoutNextButton from './CheckoutNextButton';
+import CheckoutCartItem from './CheckoutCartItem';
 
 function CheckoutCart({ onCoffeesSet }) {
   const { items, totalPrice } = useContext(CartContext);
@@ -34,7 +34,7 @@ function CheckoutCart({ onCoffeesSet }) {
         {items.length !== 0 ? (
           items.map((item) => {
             return (
-              <CartItem
+              <CheckoutCartItem
                 key={item.name + item.grindType}
                 id={item.id}
                 name={item.name}
