@@ -16,6 +16,7 @@ function CheckoutFinal({ addressData, cartData, cardData }) {
     clearCart();
     navigate('../success', { replace: true });
   };
+
   return (
     <div className={classes['checkout-final-wrapper']}>
       <h3>ADDRESS INFO</h3>
@@ -59,7 +60,12 @@ function CheckoutFinal({ addressData, cartData, cardData }) {
       <div className={classes['order-item']}>
         {cartData.order.map((item) => {
           return (
-            <div className={classes['product-item']} role="button" tabIndex={0}>
+            <div
+              className={classes['product-item']}
+              role="button"
+              tabIndex={0}
+              key={item.name + item.grindType}
+            >
               <div className={classes['product-half']}>
                 <h4>{item.name}</h4>
                 <p className={classes['product-description']}>
@@ -130,7 +136,23 @@ function CheckoutFinal({ addressData, cartData, cardData }) {
 
 CheckoutFinal.propTypes = {
   addressData: PropTypes.objectOf(PropTypes.string).isRequired,
-  cartData: PropTypes.objectOf(PropTypes.string).isRequired,
+  cartData: PropTypes.shape({
+    order: PropTypes.arrayOf(
+      PropTypes.shape({
+        amount: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        grindType: PropTypes.string.isRequired,
+        itemTotal: PropTypes.number.isRequired,
+        price: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+      })
+    ),
+    subTotal: PropTypes.string,
+    shipping: PropTypes.string,
+    tax: PropTypes.string,
+    total: PropTypes.string,
+    taxExclTotal: PropTypes.string,
+  }).isRequired,
   cardData: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
