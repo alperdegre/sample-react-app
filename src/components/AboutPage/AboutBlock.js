@@ -1,33 +1,55 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './AboutBlock.module.css';
-import aboutimage01 from '../../assets/images/aboutimage01.jpg';
 
-function AboutBlock() {
+function AboutBlock({
+  children,
+  image,
+  alt,
+  orientation,
+  backgroundColor,
+  textColor,
+}) {
   return (
-    <div className={classes['about-wrapper']}>
-      <div className={`container ${classes['about-container']}`}>
-        <img
-          src={aboutimage01}
-          alt="espresso machines"
-          className={classes['about-image']}
-        />
-        <div className={classes['about-text']}>
-          <h2>OUR GOALS</h2>
-          <p>
-            Aenean a lobortis lectus, aliquet commodo metus. Quisque venenatis
-            et ante eu iaculis. Phasellus quis purus mi. Vestibulum ante ipsum
-            primis in faucibus orci luctus et ultrices posuere cubilia curae;
-            Mauris volutpat pretium porta. Mauris ac enim non elit efficitur
-            egestas. Sed dignissim risus nisl, vel rhoncus erat ullamcorper ac.
-            Duis eros neque, faucibus nec consequat sed, congue sed mi. Quisque
-            lacinia lorem quis pharetra iaculis. Cras lorem lacus, blandit at
-            ultricies quis, maximus ut purus. Curabitur diam magna, sodales eget
-            velit et, fringilla lobortis risus.
-          </p>
+    <div
+      className={classes['about-wrapper']}
+      style={{
+        backgroundColor,
+        color: textColor,
+      }}
+    >
+      <div
+        className={`container ${classes['about-container']}`}
+        style={{
+          flexDirection: orientation === 'left' ? 'row' : 'row-reverse',
+        }}
+      >
+        <img src={image} alt={alt} className={classes['about-image']} />
+        <div
+          className={classes['about-text']}
+          style={{
+            textAlign: orientation === 'left' ? 'start' : 'end',
+          }}
+        >
+          {children}
         </div>
       </div>
     </div>
   );
 }
+
+AboutBlock.propTypes = {
+  children: PropTypes.node.isRequired,
+  image: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  orientation: PropTypes.oneOf(['left', 'right']),
+  backgroundColor: PropTypes.string.isRequired,
+  textColor: PropTypes.string,
+};
+
+AboutBlock.defaultProps = {
+  orientation: 'left',
+  textColor: '#fff',
+};
 
 export default AboutBlock;

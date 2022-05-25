@@ -1,14 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import HeaderImage from './HeaderImage';
+import MainImage from './MainImage';
 
-describe('HeaderImage', () => {
-  // it should render the paragraph
+describe('MainImage', () => {
   it('should render the paragraph', () => {
     render(
       <MemoryRouter>
-        <HeaderImage />
+        <MainImage />
       </MemoryRouter>
     );
     expect(
@@ -19,7 +18,7 @@ describe('HeaderImage', () => {
   it('should render the shop now button', () => {
     render(
       <MemoryRouter>
-        <HeaderImage />
+        <MainImage />
       </MemoryRouter>
     );
     expect(screen.getByText('Shop Now')).toBeInTheDocument();

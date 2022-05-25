@@ -1,0 +1,21 @@
+.about-contact {
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.4rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-button {
+  padding: 0.8rem 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-right: 1rem;
+}
+
+.about-button:hover {
+  color: #63425d;
+}

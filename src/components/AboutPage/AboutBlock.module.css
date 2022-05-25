@@ -1,5 +1,4 @@
 .about-wrapper {
-  background-color: #0e070d;
   width: 100%;
   height: 100%;
 }
@@ -22,7 +21,6 @@
 }
 
 .about-text {
-  color: white;
   padding: 1.6rem;
   flex-grow: 2;
 }
@@ -32,9 +30,8 @@
   font-style: italic;
   line-height: 1.6rem;
   letter-spacing: 0.1rem;
-  font-weight: 300;
+  font-weight: 400;
   text-indent: 2rem;
-  text-align: justify;
 }
 
 .about-text h2 {
@@ -45,15 +42,15 @@
 }
 
 @media only screen and (max-width: 1399px) and (min-width: 1200px) {
-    .about-text p {
-        font-size: 1.1rem;
-      }
+  .about-text p {
+    font-size: 1.1rem;
+  }
 }
 
 @media only screen and (max-width: 1199px) and (min-width: 992px) {
-    .about-image {
-        width: 18rem;
-      }
+  .about-image {
+    width: 18rem;
+  }
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
