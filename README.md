@@ -2,6 +2,8 @@
 
 A sample react frontend project to put together everything i've learned so far.
 
+All images are from Unsplash.
+
 ## Running the Code
 
 You can run via docker-compose with
