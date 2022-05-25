@@ -17,12 +17,8 @@ function Header({ onShowCart }) {
       case '/':
         setNavbarClasses(`${classes.navbar}`);
         break;
-      case '/products':
-      case '/about':
-        setNavbarClasses(`${classes.navbar} ${classes.navbar_products}`);
-        break;
       default:
-        setNavbarClasses(`${classes.navbar}`);
+        setNavbarClasses(`${classes.navbar} ${classes.navbar_products}`);
         break;
     }
   }, [pathname]);

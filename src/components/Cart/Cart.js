@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Modal from '../UI/Modal';
 import classes from './Cart.module.css';
 import CartItem from './CartItem';
@@ -7,7 +8,7 @@ import CartContext from '../../store/cart-context';
 
 function Cart({ onClose }) {
   const { items, totalPrice } = useContext(CartContext);
-  const checkoutHandler = () => {};
+
   return (
     <Modal onClose={onClose}>
       <div className={classes['cart-title']}>SHOPPING CART</div>
@@ -43,15 +44,9 @@ function Cart({ onClose }) {
         >
           CLOSE
         </div>
-        <div
-          role="button"
-          className={classes['cart-button']}
-          onClick={checkoutHandler}
-          onKeyDown={checkoutHandler}
-          tabIndex={0}
-        >
+        <Link to="/checkout" className={classes['cart-button']}>
           ORDER
-        </div>
+        </Link>
       </div>
     </Modal>
   );
