@@ -9,10 +9,12 @@ import Footer from './components/Layout/Footer';
 import Cart from './components/Cart/Cart';
 import Socials from './components/MainPage/Socials';
 import CheckoutPage from './components/CheckoutPage/CheckoutPage';
+import SuccessPage from './components/SuccessPage/SuccessPage';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
   const [iconIsShown, setIconIsShown] = useState(false);
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -20,7 +22,9 @@ function App() {
     if (cartIsShown) {
       setCartIsShown(false);
     }
-    setIconIsShown(true);
+    if (pathname !== '/success') {
+      setIconIsShown(true);
+    }
   }, [pathname]);
 
   const hideCart = () => {
@@ -34,6 +38,7 @@ function App() {
   const checkoutMadeHandler = (isCheckoutMade) => {
     if (isCheckoutMade) {
       setIconIsShown(false);
+      setIsCheckedOut(true);
     } else {
       setIconIsShown(true);
     }
@@ -51,6 +56,7 @@ function App() {
           path="/checkout"
           element={<CheckoutPage onCheckoutMade={checkoutMadeHandler} />}
         />
+        {isCheckedOut && <Route path="/success" element={<SuccessPage />} />}
       </Routes>
       <Socials />
       <Footer />
